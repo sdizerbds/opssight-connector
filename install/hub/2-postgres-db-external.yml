@@ -50,8 +50,8 @@ items:
           image: registry.access.redhat.com/rhscl/postgresql-96-rhel7:1
           resources:
             requests:
-              memory: 12G
-              cpu: 2
+              memory: 1G
+              cpu: 1
           volumeMounts:
           - name: postgres-persistent-vol
             mountPath: /var/lib/pgsql/data
@@ -62,7 +62,7 @@ items:
               name: hub-db-config-granular
           env:
           - name: POSTGRESQL_USER
-            value: blackduck
+            value: blackduck_user
           - name: POSTGRESQL_PASSWORD
             valueFrom:
               secretKeyRef:
